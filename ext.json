@@ -1,0 +1,11 @@
+{
+  "identifier": "dev.randombits.quill",
+  "name": "Quill",
+  "content_type": "SN|Component",
+  "area": "editor-editor",
+  "version": "1.0.0",
+  "description": "A rich text editor using the quill library",
+  "url": "https://nienow.github.io/sn-quill/",
+  "download_url": "https://nienow.github.io/sn-quill/latest.zip",
+  "latest_url": "https://nienow.github.io/sn-quill/ext.json"
+}
