@@ -66,6 +66,5 @@ export class MockStandardNotes {
   private updateStream(data: TestData) {
     this.streamData = JSON.parse(JSON.stringify(STREAM_EVENT_DATA));
     this.streamData.item.content.text = data.text;
-    this.streamData.item.content.appData['dev.randombits.my-editor'] = data.meta;
   }
 }

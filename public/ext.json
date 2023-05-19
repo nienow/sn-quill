@@ -1,11 +1,11 @@
 {
-  "identifier": "dev.randombits.template",
-  "name": "Extension Template",
+  "identifier": "dev.randombits.quill",
+  "name": "Quill",
   "content_type": "SN|Component",
   "area": "editor-editor",
   "version": "$VERSION$",
-  "description": "A custom editor",
-  "url": "https://nienow.github.io/sn-extension-template/",
-  "download_url": "https://nienow.github.io/sn-extension-template/latest.zip",
-  "latest_url": "https://nienow.github.io/sn-extension-template/ext.json"
+  "description": "A rich text editor using the quill library",
+  "url": "https://nienow.github.io/sn-quill/",
+  "download_url": "https://nienow.github.io/sn-quill/latest.zip",
+  "latest_url": "https://nienow.github.io/sn-quill/ext.json"
 }

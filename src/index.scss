@@ -12,6 +12,11 @@ html {
   width: 100%;
 }
 
+#root {
+  height: 100%;
+  position: relative;
+}
+
 .main {
   padding: 20px;
 }

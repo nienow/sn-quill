@@ -1,14 +1,15 @@
 import React from 'react';
+import {setup} from "goober";
 
 import './index.scss';
 import {createRoot} from "react-dom/client";
 import ComponentRelay from "@standardnotes/component-relay";
 import {getPreviewText} from "./utils";
-import CustomEditor from "./components/CustomEditor";
-import {MyEditorMeta} from "./definitions";
+import QuillEditor from "./QuillEditor";
+
+setup(React.createElement);
 
 const SN_DOMAIN = 'org.standardnotes.sn';
-const MY_DOMAIN = 'dev.randombits.my-editor';
 
 let currentNote;
 
@@ -32,9 +33,10 @@ componentRelay.streamContextItem((note) => {
 });
 
 export const rerender = () => {
+  root.unmount();
   root.render(
     <React.StrictMode>
-      <CustomEditor/>
+      <QuillEditor/>
     </React.StrictMode>
   );
 };
@@ -49,10 +51,6 @@ export const text = (): string => {
   return currentNote.content.text || '';
 }
 
-export const meta = (): MyEditorMeta => {
-  return currentNote.content.appData[MY_DOMAIN] || {};
-};
-
 export const isLocked = () => {
   return currentNote.content.appData[SN_DOMAIN]['locked'];
 };
@@ -61,15 +59,6 @@ export const updateText = (newText: string) => {
   currentNote.content.text = newText;
   save();
 };
-
-export const updateMeta = (newMeta: Partial<MyEditorMeta>) => {
-  currentNote.content.appData[MY_DOMAIN] = {
-    ...currentNote.content.appData[MY_DOMAIN],
-    ...newMeta
-  };
-  save();
-};
-
 
 
 
