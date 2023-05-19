@@ -43,7 +43,7 @@ export const rerender = () => {
 
 const save = () => {
   componentRelay.saveItemWithPresave(currentNote, () => {
-    currentNote.content.preview_plain = getPreviewText(currentNote.content.text);
+    currentNote.content.preview_plain = getPreviewText(currentNote.content.preview_plain);
   });
 };
 
@@ -55,8 +55,9 @@ export const isLocked = () => {
   return currentNote.content.appData[SN_DOMAIN]['locked'];
 };
 
-export const updateText = (newText: string) => {
+export const updateText = (newText: string, preview: string) => {
   currentNote.content.text = newText;
+  currentNote.content.preview_plain = preview;
   save();
 };
 

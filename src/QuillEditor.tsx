@@ -43,7 +43,7 @@ const QuillEditor = () => {
       }
     }
     quill.on('text-change', () => {
-      updateText(JSON.stringify(quill.getContents()));
+      updateText(JSON.stringify(quill.getContents()), quill.getText());
     });
   });
 

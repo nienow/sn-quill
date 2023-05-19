@@ -5,8 +5,9 @@ export class MockStandardNotes {
   private childWindow;
   private streamEvent;
   private streamData;
+  private locked = false;
 
-  constructor(data: TestData, private onSave: () => void) {
+  constructor(data: TestData, private onSave: (item: any) => void) {
     this.updateStream(data);
     window.addEventListener('message', this.handleMessage.bind(this));
   }
@@ -17,7 +18,8 @@ export class MockStandardNotes {
   }
 
   public toggleLock(isLocked: boolean) {
-    this.streamData.item.content.appData['org.standardnotes.sn']['locked'] = isLocked;
+    this.locked = isLocked;
+    this.streamData.item.content.appData['org.standardnotes.sn']['locked'] = this.locked;
     this.childWindow.postMessage({
       action: 'reply',
       data: this.streamData,
@@ -54,7 +56,7 @@ export class MockStandardNotes {
         original: data
       }, '*');
     } else if (data.action === 'save-items') {
-      this.onSave();
+      this.onSave(data.data.items[0]);
       this.childWindow.postMessage({
         action: 'reply',
         data: {},
@@ -65,6 +67,7 @@ export class MockStandardNotes {
 
   private updateStream(data: TestData) {
     this.streamData = JSON.parse(JSON.stringify(STREAM_EVENT_DATA));
+    this.streamData.item.content.appData['org.standardnotes.sn']['locked'] = this.locked;
     this.streamData.item.content.text = data.text;
   }
 }
