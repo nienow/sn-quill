@@ -1,19 +1,7 @@
-# Standard Notes Editor Extension Template
+# Standard Notes Quill Editor
 
-Full Documentation & Demo at https://randombits.dev/standard-notes/template
+This is a rich text editor that uses [quill](https://quilljs.com/).
 
-## Getting Started
+See a [demo](https://nienow.github.io/sn-quill/demo.html).
 
-Click on the `Use this template` button in Github to create a new repo based on this template.
-
-Then clone your new repo, install dependencies, and start the dev server:
-
-```
-# Install dependencies
-npm install
-
-# Start Dev Server
-npm run start
-```
-
-The demo page should be launched automatically.
+Install the extension using: [https://nienow.github.io/sn-quill/ext.json](https://nienow.github.io/sn-quill/ext.json)
