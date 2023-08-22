@@ -4,7 +4,7 @@ export class MarkdownShortcuts {
     name: 'header',
     pattern: /^(#){1,6}\s/g,
     action: (text, selection, pattern) => {
-      var match = pattern.exec(text);
+      let match = pattern.exec(text);
       if (!match) {
         return;
       }
