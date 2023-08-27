@@ -4,8 +4,7 @@ import {styled} from "goober";
 import Quill from 'quill';
 import './quill.css';
 import {MarkdownShortcuts} from "./quill-markdown";
-import snApi from "sn-extension-api";
-import {getPreviewText} from "./utils";
+import {isLocked, text, updateText} from "./index";
 
 const Container = styled('div')`
   position: absolute;
@@ -21,7 +20,7 @@ const QuillEditor = () => {
   useEffect(() => {
     Quill.register('modules/markdown', MarkdownShortcuts);
     const quill = new Quill(`#quill`, {
-      readOnly: snApi.locked,
+      readOnly: isLocked(),
       modules: {
         toolbar: [
           [{'header': '1'}, {'header': '2'}, 'bold', 'italic', 'underline', 'strike', 'blockquote', 'code', 'link', {'list': 'ordered'}, {'list': 'bullet'}, {'align': []}, {'color': []}, {'background': []}, 'clean'],
@@ -30,7 +29,7 @@ const QuillEditor = () => {
       },
       theme: 'snow'
     });
-    const initialText = snApi.text;
+    const initialText = text();
     if (initialText) {
       try {
         const data = JSON.parse(initialText);
@@ -44,8 +43,7 @@ const QuillEditor = () => {
       }
     }
     quill.on('text-change', () => {
-      snApi.text = JSON.stringify(quill.getContents());
-      snApi.preview = getPreviewText(quill.getText());
+      updateText(JSON.stringify(quill.getContents()), quill.getText());
     });
   });
 
