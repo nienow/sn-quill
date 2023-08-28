@@ -1,6 +1,6 @@
 {
   "name": "sn-extension-template",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "scripts": {
     "start": "webpack serve --mode development",
     "build": "webpack",
@@ -8,11 +8,10 @@
   },
   "dependencies": {
     "@preact/compat": "^17.1.2",
-    "@standardnotes/component-relay": "^2.2.2",
-    "@standardnotes/stylekit": "5.29.3",
     "goober": "^2.1.12",
     "preact": "^10.13.2",
-    "quill": "^1.3.7"
+    "quill": "^1.3.7",
+    "sn-extension-api": "0.3.2"
   },
   "devDependencies": {
     "@babel/core": "^7.21.5",
