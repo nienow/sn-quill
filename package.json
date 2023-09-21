@@ -14,7 +14,7 @@
     "sn-extension-api": "0.3.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.21.5",
+    "@babel/core": "^7.22.20",
     "@babel/plugin-transform-react-jsx": "^7.21.5",
     "@babel/preset-env": "^7.21.5",
     "@babel/preset-typescript": "^7.21.5",
