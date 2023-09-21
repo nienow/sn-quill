@@ -23,7 +23,7 @@
     "@types/react-dom": "^18.2.1",
     "babel-loader": "^9.1.2",
     "copy-webpack-plugin": "^11.0.0",
-    "css-loader": "^6.7.3",
+    "css-loader": "^6.8.1",
     "html-webpack-plugin": "^5.5.1",
     "live-server": "^1.2.2",
     "sass": "^1.62.1",
