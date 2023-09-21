@@ -1,12 +1,16 @@
 lockfileVersion: '6.0'
 
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
 dependencies:
   '@preact/compat':
     specifier: ^17.1.2
     version: 17.1.2(preact@10.13.2)
   goober:
-    specifier: ^2.1.12
-    version: 2.1.12(csstype@3.1.2)
+    specifier: ^2.1.13
+    version: 2.1.13(csstype@3.1.2)
   preact:
     specifier: ^10.13.2
     version: 10.13.2
@@ -3086,8 +3090,8 @@ packages:
       slash: 4.0.0
     dev: true
 
-  /goober@2.1.12(csstype@3.1.2):
-    resolution: {integrity: sha512-yXHAvO08FU1JgTXX6Zn6sYCUFfB/OJSX8HHjDSgerZHZmFKAb08cykp5LBw5QnmyMcZyPRMqkdyHUSSzge788Q==}
+  /goober@2.1.13(csstype@3.1.2):
+    resolution: {integrity: sha512-jFj3BQeleOoy7t93E9rZ2de+ScC4lQICLwiAQmKMg9F6roKGaLSHoCDYKkWlSafg138jejvq/mTdvmnwDQgqoQ==}
     peerDependencies:
       csstype: ^3.0.10
     dependencies:
