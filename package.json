@@ -9,7 +9,7 @@
   "dependencies": {
     "@preact/compat": "^17.1.2",
     "goober": "^2.1.13",
-    "preact": "^10.17.1",
+    "preact": "^10.18.1",
     "quill": "^1.3.7",
     "sn-extension-api": "0.3.2"
   },
