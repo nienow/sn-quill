@@ -32,8 +32,8 @@ devDependencies:
     specifier: ^7.22.20
     version: 7.22.20(@babel/core@7.23.0)
   '@babel/preset-typescript':
-    specifier: ^7.23.0
-    version: 7.23.0(@babel/core@7.23.0)
+    specifier: ^7.23.2
+    version: 7.23.2(@babel/core@7.23.0)
   '@types/node':
     specifier: ^18.16.3
     version: 18.16.3
@@ -159,7 +159,7 @@ packages:
     resolution: {integrity: sha512-QkBXwGgaoC2GtGZRoma6kv7Szfv06khvhFav67ZExau2RaXzy8MpHSMO2PNoP2XtmQphJQRHFfg77Bq731Yizw==}
     engines: {node: '>=6.9.0'}
     dependencies:
-      '@babel/types': 7.22.19
+      '@babel/types': 7.23.0
     dev: true
 
   /@babel/helper-compilation-targets@7.22.15:
@@ -344,7 +344,7 @@ packages:
     dependencies:
       '@babel/helper-function-name': 7.23.0
       '@babel/template': 7.22.15
-      '@babel/types': 7.22.19
+      '@babel/types': 7.23.0
     dev: true
 
   /@babel/helpers@7.23.1:
@@ -1264,12 +1264,12 @@ packages:
     dependencies:
       '@babel/core': 7.23.0
       '@babel/helper-plugin-utils': 7.22.5
-      '@babel/types': 7.22.19
+      '@babel/types': 7.23.0
       esutils: 2.0.3
     dev: true
 
-  /@babel/preset-typescript@7.23.0(@babel/core@7.23.0):
-    resolution: {integrity: sha512-6P6VVa/NM/VlAYj5s2Aq/gdVg8FSENCg3wlZ6Qau9AcPaoF5LbN1nyGlR9DTRIw9PpxI94e+ReydsJHcjwAweg==}
+  /@babel/preset-typescript@7.23.2(@babel/core@7.23.0):
+    resolution: {integrity: sha512-u4UJc1XsS1GhIGteM8rnGiIvf9rJpiVgMEeCnwlLA7WJPC+jcXWJAGxYmeqs5hOZD8BbAfnV5ezBOxQbb4OUxA==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0-0
