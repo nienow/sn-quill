@@ -11,7 +11,7 @@
     "goober": "^2.1.13",
     "preact": "^10.18.1",
     "quill": "^1.3.7",
-    "sn-extension-api": "0.3.2"
+    "sn-extension-api": "0.3.4"
   },
   "devDependencies": {
     "@babel/core": "^7.23.0",

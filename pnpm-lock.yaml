@@ -18,8 +18,8 @@ dependencies:
     specifier: ^1.3.7
     version: 1.3.7
   sn-extension-api:
-    specifier: 0.3.2
-    version: 0.3.2
+    specifier: 0.3.4
+    version: 0.3.4
 
 devDependencies:
   '@babel/core':
@@ -4784,8 +4784,8 @@ packages:
     engines: {node: '>=12'}
     dev: true
 
-  /sn-extension-api@0.3.2:
-    resolution: {integrity: sha512-naQCM/HsitrLPNJCXTfEy694YTlwGzJCYr8UeTTRxqfYGzTJU2wBPaYkqyZEOWehZdyViPys/LuGu/mOLePrGQ==}
+  /sn-extension-api@0.3.4:
+    resolution: {integrity: sha512-3afmzoDZCx9AYSuQqd2QenGaC9TsrHqrzR53J01tuCiyP2Cu0BGLTVE2uHie5BzSi91XrIlbGnucNOGjutsgUg==}
     dev: false
 
   /snapdragon-node@2.1.1:
