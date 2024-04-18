@@ -12,5 +12,7 @@ updates:
     groups:
       minor-versions:
         update-types:
-        - "minor"
-        - "patch"
+          - "minor"
+          - "patch"
+    ignore:
+      - dependency-name: "quill"
