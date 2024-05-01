@@ -1,3 +1,8 @@
+hr {
+  border: 0;
+  border-top: 1px solid var(--sn-stylekit-border-color);
+  margin: 1em 0;
+}
 
 .ql-container {
   box-sizing: border-box;
