@@ -1,6 +1,6 @@
 {
-  "name": "sn-extension-template",
-  "version": "1.0.1",
+  "name": "sn-quill",
+  "version": "1.1.0",
   "scripts": {
     "start": "webpack serve --mode development",
     "build": "webpack",

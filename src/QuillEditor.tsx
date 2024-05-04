@@ -30,7 +30,7 @@ const QuillEditor = () => {
     DividerBlot.tagName = 'hr';
     Quill.register(DividerBlot);
 
-    Quill.import('ui/icons').divider = '<svg viewBox="0 0 18 18"><line x1="3" y1="9" x2="15" y2="9" stroke-width="2" stroke="currentColor"></line></svg>';
+    Quill.import('ui/icons').divider = '<svg viewBox="0 0 18 18" class="ql-fill"><rect height="2" width="14" x="2" y="8"></rect></svg>';
 
     quill = new Quill(`#quill`, {
       readOnly: snApi.locked,
