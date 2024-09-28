@@ -7,7 +7,7 @@
     "preview": "live-server --cors dist/"
   },
   "dependencies": {
-    "@preact/compat": "^17.1.2",
+    "@preact/compat": "^18.3.1",
     "goober": "^2.1.14",
     "preact": "^10.24.0",
     "quill": "^1.3.7",
