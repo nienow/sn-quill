@@ -541,6 +541,10 @@ hr {
   color: #93f
 }
 
+.ql-editor .ql-font-default {
+  font-family: var(--sn-stylekit-editor-font-family);
+}
+
 .ql-editor .ql-font-serif {
   font-family: Georgia, Times New Roman, serif;
 }
@@ -1076,6 +1080,12 @@ hr {
 
 .ql-snow .ql-picker.ql-font {
   width: 108px;
+}
+
+.ql-snow .ql-picker.ql-font .ql-picker-label[data-value=default]::before,
+.ql-snow .ql-picker.ql-font .ql-picker-item[data-value=default]::before {
+  content: 'Default';
+  font-family: var(--sn-stylekit-editor-font-family);
 }
 
 .ql-snow .ql-picker.ql-font .ql-picker-label[data-value=serif]::before,

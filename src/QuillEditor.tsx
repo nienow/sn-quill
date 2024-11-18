@@ -21,7 +21,7 @@ const QuillEditor = () => {
   let quill;
   useEffect(() => {
     const Font = Quill.import('attributors/class/font');
-    Font.whitelist = ['serif', 'sans-serif', 'monospace', 'arial', 'comic-sans'];
+    Font.whitelist = ['default', 'serif', 'sans-serif', 'monospace', 'arial', 'comic-sans'];
     Quill.register(Font, true);
     Quill.register('modules/markdown', MarkdownShortcuts);
     const BlockEmbed = Quill.import('blots/block/embed');
@@ -41,12 +41,11 @@ const QuillEditor = () => {
         toolbar: [
           [{ 'font': Font.whitelist }, { 'header': '1' }, { 'header': '2' }, 'bold', 'italic', 'underline', 'strike', 'blockquote', 'code', 'link', 'image', 'divider', { 'list': 'ordered' }, { 'list': 'bullet' }, { 'align': [] }, { 'color': [] }, { 'background': [] }, 'clean'],
         ],
-        markdown: {}
+        markdown: {},
       },
       theme: 'snow',
-      syntax: true
     });
-    quill.format('font', 'serif');
+    quill.format('font', 'default');
     const initialText = snApi.text;
     if (initialText) {
       try {
