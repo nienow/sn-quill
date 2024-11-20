@@ -1,11 +1,11 @@
-import { useEffect } from 'react';
-import { styled } from "goober";
+import {useEffect} from 'react';
+import {styled} from "goober";
 
 import Quill from 'quill';
 import './quill.css';
-import { MarkdownShortcuts } from "./quill-markdown";
+import {MarkdownShortcuts} from "./quill-markdown";
 import snApi from "sn-extension-api";
-import { getPreviewText } from "./utils";
+import {getPreviewText} from "./utils";
 
 const Container = styled('div')`
   position: absolute;
@@ -21,7 +21,7 @@ const QuillEditor = () => {
   let quill;
   useEffect(() => {
     const Font = Quill.import('attributors/class/font');
-    Font.whitelist = ['default', 'serif', 'sans-serif', 'monospace', 'arial', 'comic-sans'];
+    Font.whitelist = [false, 'serif', 'sans-serif', 'monospace', 'arial', 'comic-sans'];
     Quill.register(Font, true);
     Quill.register('modules/markdown', MarkdownShortcuts);
     const BlockEmbed = Quill.import('blots/block/embed');
@@ -39,13 +39,12 @@ const QuillEditor = () => {
       readOnly: snApi.locked,
       modules: {
         toolbar: [
-          [{ 'font': Font.whitelist }, { 'header': '1' }, { 'header': '2' }, 'bold', 'italic', 'underline', 'strike', 'blockquote', 'code', 'link', 'image', 'divider', { 'list': 'ordered' }, { 'list': 'bullet' }, { 'align': [] }, { 'color': [] }, { 'background': [] }, 'clean'],
+          [{'font': Font.whitelist}, {'header': '1'}, {'header': '2'}, 'bold', 'italic', 'underline', 'strike', 'blockquote', 'code', 'link', 'image', 'divider', {'list': 'ordered'}, {'list': 'bullet'}, {'align': []}, {'color': []}, {'background': []}, 'clean'],
         ],
         markdown: {},
       },
       theme: 'snow',
     });
-    quill.format('font', 'default');
     const initialText = snApi.text;
     if (initialText) {
       try {
@@ -67,9 +66,7 @@ const QuillEditor = () => {
       quill.insertEmbed(range.index + 1, 'divider', true, Quill.sources.USER);
       quill.setSelection(range.index + 2, Quill.sources.SILENT);
     });
-    const fontPicker = document.querySelector('.ql-picker.ql-font');
     quill.on('text-change', () => {
-      if (!quill.getFormat().font) { quill.format('font', fontPicker.querySelector('.ql-picker-label').getAttribute('data-value')); }
       snApi.text = JSON.stringify(quill.getContents());
       snApi.preview = getPreviewText(quill.getText());
     });

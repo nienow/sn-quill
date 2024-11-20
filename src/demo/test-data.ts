@@ -12,7 +12,7 @@ export const EMPTY = {
 };
 export const PLAIN = {
   title: 'Plain Text',
-  text: '',
+  text: 'This is some plain text.\n\nNothing exciting.',
   meta: {}
 };
 
