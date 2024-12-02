@@ -20,6 +20,9 @@ const Container = styled('div')`
 const QuillEditor = () => {
   let quill;
   useEffect(() => {
+    const Font = Quill.import('attributors/class/font');
+    Font.whitelist = [false, 'serif', 'sans-serif', 'monospace', 'arial', 'comic-sans'];
+    Quill.register(Font, true);
     Quill.register('modules/markdown', MarkdownShortcuts);
     const BlockEmbed = Quill.import('blots/block/embed');
 
@@ -36,11 +39,23 @@ const QuillEditor = () => {
       readOnly: snApi.locked,
       modules: {
         toolbar: [
-          [{'header': '1'}, {'header': '2'}, 'bold', 'italic', 'underline', 'strike', 'blockquote', 'code', 'link', 'image', 'divider', {'list': 'ordered'}, {'list': 'bullet'}, {'align': []}, {'color': []}, {'background': []}, 'clean'],
+          [{'font': Font.whitelist}, {'header': '1'}, {'header': '2'}, 'bold', 'italic', 'underline', 'strike', 'blockquote', 'code', 'link', 'image', 'divider', {'list': 'ordered'}, {'list': 'bullet'}, {'align': []}, {'color': []}, {'background': []}, 'clean'],
         ],
-        markdown: {}
+        keyboard: {
+          bindings: [{
+            key: 'Enter',
+            handler: function (range, context) {
+              // call default enter handler
+              this.bindings.Enter[1].handler.bind(this)(range, context);
+
+              // keep font style
+              this.quill.format('font', context.format.font, Quill.sources.USER);
+            }
+          }]
+        },
+        markdown: {},
       },
-      theme: 'snow'
+      theme: 'snow',
     });
     const initialText = snApi.text;
     if (initialText) {
@@ -63,7 +78,6 @@ const QuillEditor = () => {
       quill.insertEmbed(range.index + 1, 'divider', true, Quill.sources.USER);
       quill.setSelection(range.index + 2, Quill.sources.SILENT);
     });
-
     quill.on('text-change', () => {
       snApi.text = JSON.stringify(quill.getContents());
       snApi.preview = getPreviewText(quill.getText());
