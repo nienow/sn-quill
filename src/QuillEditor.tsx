@@ -42,16 +42,18 @@ const QuillEditor = () => {
           [{'font': Font.whitelist}, {'header': '1'}, {'header': '2'}, 'bold', 'italic', 'underline', 'strike', 'blockquote', 'code', 'link', 'image', 'divider', {'list': 'ordered'}, {'list': 'bullet'}, {'align': []}, {'color': []}, {'background': []}, 'clean'],
         ],
         keyboard: {
-          bindings: [{
-            key: 'Enter',
-            handler: function (range, context) {
-              // call default enter handler
-              this.bindings.Enter[1].handler.bind(this)(range, context);
-
-              // keep font style
-              this.quill.format('font', context.format.font, Quill.sources.USER);
+          bindings: {
+            'keep-font': {
+              key: 'Enter',
+              handler: function (range, context) {
+                setTimeout(() => {
+                  // keep font style
+                  this.quill.format('font', context.format.font, Quill.sources.USER);
+                });
+                return true;
+              }
             }
-          }]
+          }
         },
         markdown: {},
       },
