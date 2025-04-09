@@ -1,4 +1,4 @@
-import React, {useRef, useState} from 'react';
+import {useRef, useState} from 'react';
 import {TEST_DATA} from "./test-data";
 import {MockStandardNotes} from "./mock-notes";
 
@@ -8,7 +8,7 @@ const mock = new MockStandardNotes(TEST_DATA[0], (item: any) => {
 });
 
 const DemoApp = () => {
-  const iframeRef = useRef<HTMLIFrameElement>();
+  const iframeRef = useRef<HTMLIFrameElement>(null);
   const [selected, setSelected] = useState(0);
   const [disabled, setDisabled] = useState(false);
   const [theme, setTheme] = useState('light');
@@ -59,6 +59,6 @@ const DemoApp = () => {
       </div>
     </div>
   );
-}
+};
 
-export default DemoApp
+export default DemoApp;
