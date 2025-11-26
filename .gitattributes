@@ -1,0 +1,9 @@
+* text=auto
+*.ts text eol=crlf
+*.tsx text eol=crlf
+*.json text eol=crlf
+*.css text eol=crlf
+*.scss text eol=crlf
+*.html text eol=crlf
+*.yaml text eol=crlf
+*.yml text eol=crlf
