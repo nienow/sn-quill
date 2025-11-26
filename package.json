@@ -11,7 +11,8 @@
     "goober": "^2.1.18",
     "preact": "^10.27.2",
     "quill": "^2.0.3",
-    "sn-extension-api": "0.4.0"
+    "sn-extension-api": "0.4.0",
+    "highlight.js": "^11.11.1"
   },
   "devDependencies": {
     "@babel/core": "^7.28.5",
