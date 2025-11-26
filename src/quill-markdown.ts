@@ -19,7 +19,7 @@ export class MarkdownShortcuts {
     {
       name: 'blockquote',
       pattern: /^(>)\s/g,
-      action: (text, selection) => {
+      action: (_text, selection) => {
         // Need to defer this action https://github.com/quilljs/quill/issues/1134
         setTimeout(() => {
           this.quill.formatLine(selection.index, 1, 'blockquote', true);
@@ -30,7 +30,7 @@ export class MarkdownShortcuts {
     {
       name: 'bolditalic',
       pattern: /(?:\*|_){3}(.+?)(?:\*|_){3}/g,
-      action: (text, selection, pattern, lineStart) => {
+      action: (text, _selection, pattern, lineStart) => {
         let match = pattern.exec(text);
 
         const annotatedText = match[0];
@@ -51,7 +51,7 @@ export class MarkdownShortcuts {
     {
       name: 'bold',
       pattern: /(?:\*|_){2}(.+?)(?:\*|_){2}/g,
-      action: (text, selection, pattern, lineStart) => {
+      action: (text, _selection, pattern, lineStart) => {
         let match = pattern.exec(text);
 
         const annotatedText = match[0];
@@ -72,7 +72,7 @@ export class MarkdownShortcuts {
     {
       name: 'italic',
       pattern: /(?:\*|_){1}(.+?)(?:\*|_){1}/g,
-      action: (text, selection, pattern, lineStart) => {
+      action: (text, _selection, pattern, lineStart) => {
         let match = pattern.exec(text);
 
         const annotatedText = match[0];
@@ -93,7 +93,7 @@ export class MarkdownShortcuts {
     {
       name: 'strikethrough',
       pattern: /(?:~~)(.+?)(?:~~)/g,
-      action: (text, selection, pattern, lineStart) => {
+      action: (text, _selection, pattern, lineStart) => {
         let match = pattern.exec(text);
 
         const annotatedText = match[0];
@@ -128,7 +128,7 @@ export class MarkdownShortcuts {
     {
       name: 'code',
       pattern: /(?:`)(.+?)(?:`)/g,
-      action: (text, selection, pattern, lineStart) => {
+      action: (text, _selection, pattern, lineStart) => {
         let match = pattern.exec(text);
 
         const annotatedText = match[0];

@@ -61,10 +61,7 @@ class DividerBlot extends BlockEmbed {
 }
 Quill.register(DividerBlot as any, true);
 
-const icons = Quill.import('ui/icons') as Record<string, string>;
-icons.divider = '<svg viewBox="0 0 18 18" class="ql-fill"><rect height="2" width="14" x="2" y="8"></rect></svg>';
-// https://github.com/slab/quill/pull/3917
-icons['code-block'] = '<svg viewBox="0 0 18 18" transform="scale(0.8)"> <polyline class="ql-even ql-stroke" points="5 7 3 9 5 11" transform="scale(0.9)"></polyline> <polyline class="ql-even ql-stroke" points="13 7 15 9 13 11" transform="scale(0.9)"></polyline> <line class="ql-stroke" x1="10" x2="8" y1="5" y2="13" transform="scale(0.9)"></line> <path d="M0.868784,12.949447v4.05075l16.147395-.000001v-16.098555c0,0-2.647404,0-3.782006,0" fill="none" stroke-linecap="round" stroke-linejoin="round" class="ql-stroke" style="stroke-width: 2;"></path></svg>';
+(Quill.import('ui/icons') as Record<string, string>).divider = '<svg viewBox="0 0 18 18" class="ql-fill"><rect height="2" width="14" x="2" y="8"></rect></svg>';
 
 const Container = styled('div')`
   position: absolute;
@@ -88,13 +85,13 @@ const QuillEditor = () => {
       readOnly: snApi.locked,
       modules: {
         toolbar: [
-          [{'font': Font.whitelist}, {'header': '1'}, {'header': '2'}, 'bold', 'italic', 'underline', 'strike', 'blockquote', 'code', 'code-block', 'link', 'image', 'divider', {'list': 'ordered'}, {'list': 'bullet'}, {'align': []}, {'color': []}, {'background': []}, 'clean'],
+          [{'font': Font.whitelist}, {'header': '1'}, {'header': '2'}, 'bold', 'italic', 'underline', 'strike', 'blockquote', 'code-block', 'link', 'image', 'divider', {'list': 'ordered'}, {'list': 'bullet'}, {'align': []}, {'color': []}, {'background': []}, 'clean'],
         ],
         keyboard: {
           bindings: {
             'keep-font': {
               key: 'Enter',
-              handler: function (range, context) {
+              handler: function (_range, context) {
                 setTimeout(() => {
                   // keep font style on new lines
                   this.quill.format('font', context.format.font, Quill.sources.USER);
