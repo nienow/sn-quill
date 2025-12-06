@@ -23,7 +23,6 @@
     "baseUrl": "src",
     "forceConsistentCasingInFileNames": true,
     "esModuleInterop": true,
-    "suppressImplicitAnyIndexErrors": true,
     "strictNullChecks": false,
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true

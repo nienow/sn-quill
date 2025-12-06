@@ -3,6 +3,8 @@
   "name": "Quill",
   "content_type": "SN|Component",
   "area": "editor-editor",
+  "note_type": "rich-text",
+  "file_type": "json",
   "version": "$VERSION$",
   "description": "A rich text editor using the quill library",
   "url": "https://nienow.github.io/sn-quill/",

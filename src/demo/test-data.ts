@@ -148,6 +148,29 @@ export const RICH = {
         'insert': 'Red Background'
       },
       {
+        'insert': '\n\n'
+      },
+      {
+        'attributes': {
+        },
+        'insert': 'const language = "JavaScript";'
+      },
+      {
+        'attributes': {
+          'code-block': 'javascript'
+        },
+        'insert': '\n'
+      },
+      {
+        'insert': 'console.log("I love " + language + "!");'
+      },
+      {
+        'attributes': {
+          'code-block': true
+        },
+        'insert': '\n'
+      },
+      {
         'insert': '\n'
       }
     ]
