@@ -3,6 +3,8 @@
   "name": "Quill (local)",
   "content_type": "SN|Component",
   "area": "editor-editor",
+  "note_type": "rich-text",
+  "file_type": "json",
   "version": "0.0.1",
   "url": "http://localhost:8080/"
 }
