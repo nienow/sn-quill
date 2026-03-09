@@ -7,7 +7,7 @@
     "preview": "live-server --cors dist/"
   },
   "dependencies": {
-    "@preact/compat": "^18.3.1",
+    "@preact/compat": "^18.3.2",
     "goober": "^2.1.18",
     "highlight.js": "^11.11.1",
     "preact": "^10.28.4",
@@ -21,7 +21,7 @@
     "@babel/preset-typescript": "^7.28.5",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
-    "babel-loader": "^10.0.0",
+    "babel-loader": "^10.1.1",
     "copy-webpack-plugin": "^13.0.1",
     "css-loader": "^7.1.4",
     "html-webpack-plugin": "^5.6.6",
@@ -33,7 +33,7 @@
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3",
     "url-loader": "^4.1.1",
-    "webpack": "^5.105.2",
+    "webpack": "^5.105.4",
     "webpack-cli": "^6.0.1",
     "webpack-dev-server": "^5.2.3",
     "zip-webpack-plugin": "^4.0.3"
